@@ -1,0 +1,17 @@
+defaults:
+  - shared_workspace_base
+  - _self_
+
+name: shared_workspace
+
+q_encoder:
+  name: identity
+
+mem_slots: 8
+
+encoder:
+  name: patchify
+  ch: 256
+  patch_size: 5
+  
+n_layers: 4

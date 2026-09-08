@@ -1,0 +1,16 @@
+defaults:
+  - sqoop_base
+  - _self_
+
+name: sqoop
+seed: 0
+root: ./data
+
+# total examples:
+train_size: 1_080_000
+test_size: 25_600
+
+rhs_variety: 18
+
+dir: ${dataset.name}-seed${dataset.seed}-train${dataset.train_size}-test${dataset.test_size}-rhs${dataset.rhs_variety}
+

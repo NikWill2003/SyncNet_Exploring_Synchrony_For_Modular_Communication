@@ -1,0 +1,17 @@
+defaults:
+  - config_schema
+  - _self_
+  - task: ???
+  - experiment: null
+
+train:
+  seed: 0
+
+hydra:
+  run:
+    dir: outputs/${dataset.name}/multirun/${now:%Y-%m-%d_%H-%M-%S-%f}     # campaigns pass hydra.sweep.dir with the experiment name
+  sweep:
+    dir: outputs/${dataset.name}/multirun/${now:%Y-%m-%d_%H-%M-%S-%f}     # campaigns pass hydra.sweep.dir with the experiment name
+    subdir: ${hydra.job.override_dirname}
+  job:
+    chdir: false

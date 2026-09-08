@@ -1,0 +1,17 @@
+defaults:
+  - conv_base
+  - _self_
+
+name: conv
+
+q_encoder:
+  name: mlp
+  hidden_dim: 128
+  output_dim: 128
+
+hidden_dim: 256
+
+encoder:
+  name: cnn
+  ch: 128
+  hidden: 64

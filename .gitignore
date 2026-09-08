@@ -1,0 +1,8 @@
+data/
+outputs/
+multirun/
+results/
+wandb/
+.vscode/
+__pycache__/
+*.pyc

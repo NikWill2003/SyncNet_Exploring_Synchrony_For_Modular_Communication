@@ -1,0 +1,21 @@
+defaults:
+  - relnet_base
+  - _self_
+
+name: relnet
+
+q_encoder:
+  name: lstm
+  embedding_dim: 32
+  output_dim: 128
+  
+g_hidden_dim: 256
+f_hidden_dim: 256
+
+pair_spatial: 5
+
+
+encoder:
+  name: cnn
+  ch: 64
+  hidden: 64

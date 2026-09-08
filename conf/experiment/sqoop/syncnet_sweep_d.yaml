@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+  - /model: sqoop/syncnet
+  - _self_
+
+callbacks: [freeze_phase, zero_phase, shuffle_phase]
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      dataset.rhs_variety: 1
+      model.phase_dim: 2,3,4,8
+      train.seed: 0,1,2

@@ -1,0 +1,13 @@
+defaults:
+  - syncnet_base
+  - _self_
+
+name: syncnet
+
+ablation: null
+
+bias_init: partition
+
+encoder:
+  name: cnn
+  ch: 64

@@ -1,0 +1,42 @@
+# @package _global_
+
+# shared setting for all experimets
+defaults:
+  - /dataset: sqoop/default
+  - _self_
+
+train:
+  n_steps: 100_000
+  train_bs: 256
+  val_bs: 1024
+  early_stop_metric: loss
+  early_stop_big_is_better: false
+  early_stop_patience: null
+  early_stop_min_delta: 0.0
+  loader_mode: dataloader        
+  mixed_precision: bf16
+  compile_model: true
+  compile_mode: reduce-overhead
+  grad_accum: 1
+  grad_clip: 1.0
+
+optim:
+  optimiser: adamw
+  lr: 3e-4
+  weight_decay: 0.01
+  lr_scheduler: warmup_cosine
+  lr_scheduler_params:
+    warmup_steps: 2_000
+
+logging:
+  train_log_interval: 500
+  eval_log_interval: 500
+  info_metrics: [loss, accuracy]
+  save_best: true
+
+wandb:
+  enabled: true
+  project_name: sqoop
+  entity: null
+  run_name: null
+  tags: []

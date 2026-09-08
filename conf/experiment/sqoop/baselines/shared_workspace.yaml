@@ -1,0 +1,13 @@
+# @package _global_
+# Table 5.1 / Figure 5.2 row: shared_workspace, 5 seeds x pair variety
+defaults:
+  - /model: sqoop/shared_workspace
+  - _self_
+optim:
+  lr: 1e-4
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      dataset.rhs_variety: 1,2,4,8,18,35
+      train.seed: 0,1,2,3,4

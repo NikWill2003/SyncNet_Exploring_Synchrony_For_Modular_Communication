@@ -1,0 +1,14 @@
+# @package _global_
+
+defaults:
+  - /model: sort_of_clevr/syncnet
+  - _self_
+
+callbacks: [freeze_phase, zero_phase, shuffle_phase]
+
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      model.ablation: no_bias,shared_cells,lines_attention,softmax_read,content_addresses
+      train.seed: 0,1,2,3,4

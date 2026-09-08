@@ -1,0 +1,16 @@
+# @package _global_
+# Table 5.1 / Figure 5.2 row: relnet, 5 seeds x pair variety
+defaults:
+  - /model: sqoop/relnet
+  - _self_
+model:
+  pair_spatial: 8
+train:
+  grad_accum: 8
+  n_steps: 20_000
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      dataset.rhs_variety: 1,2,4,8,18,35
+      train.seed: 0,1,2,3,4

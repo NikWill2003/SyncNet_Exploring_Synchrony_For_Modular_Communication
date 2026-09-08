@@ -1,0 +1,13 @@
+defaults:
+  - syncnet_base
+  - _self_
+
+name: syncnet
+
+ablation: null
+
+encoder:
+  name: cnn
+  ch: 128
+  
+bias_init: zero

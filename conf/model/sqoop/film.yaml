@@ -1,0 +1,21 @@
+defaults:
+  - film_base
+  - _self_
+
+name: film
+
+q_encoder:
+  name: lstm
+  embedding_dim: 32
+  output_dim: 128
+  
+n_blocks: 4
+block_ch: 128
+classifier_ch: 512
+classifier_hidden: 1024
+use_coords: true
+
+encoder:
+  name: cnn
+  ch: 64
+  hidden: 64

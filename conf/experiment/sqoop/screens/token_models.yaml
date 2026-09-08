@@ -1,0 +1,19 @@
+# @package _global_
+# Screen: token models on patches (patch 4) vs the task's shared cnn stem (64 ch), at the
+# protocol rate and at 1e-4, rhs=18, 2 seeds. Decides the SQOOP transformer / workspace yamls.
+defaults:
+  - /model: sqoop/transformer
+  - _self_
+model:
+  encoder:
+    ch: 64
+    patch_size: 4
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      model: sqoop/transformer,sqoop/shared_workspace
+      model.encoder.name: patchify,cnn
+      optim.lr: 3e-4,1e-4
+      dataset.rhs_variety: 18
+      train.seed: 0,1

@@ -1,0 +1,13 @@
+# @package _global_
+# Table 5.2: canonical minus one component, 5 seeds
+defaults:
+  - /model: sqoop/syncnet
+  - _self_
+callbacks: [freeze_phase, zero_phase, shuffle_phase]
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      dataset.rhs_variety: 1
+      model.ablation: no_bias,shared_cells,lines_attention,softmax_read,content_addresses
+      train.seed: 0,1,2,3,4

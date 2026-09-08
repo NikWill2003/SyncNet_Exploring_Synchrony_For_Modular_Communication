@@ -1,0 +1,11 @@
+# @package _global_
+# Table 5.1 / Figure 5.2 row: question_only, 5 seeds x pair variety
+defaults:
+  - /model: sqoop/question_only
+  - _self_
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      dataset.rhs_variety: 1,2,4,8,18,35
+      train.seed: 0,1,2,3,4

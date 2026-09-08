@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - /model: sort_of_clevr/shared_workspace
+  - _self_
+  
+hydra:
+  mode: MULTIRUN
+  sweeper:
+    params:
+      train.seed: 0,1,2,3,4

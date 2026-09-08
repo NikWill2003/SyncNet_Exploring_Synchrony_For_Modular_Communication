@@ -1,0 +1,17 @@
+defaults:
+  - relnet_base
+  - _self_
+
+name: relnet
+
+q_encoder:
+  name: identity
+g_hidden_dim: 256
+f_hidden_dim: 256
+
+pair_spatial: 5
+
+encoder:
+  name: cnn
+  ch: 128
+  hidden: 64

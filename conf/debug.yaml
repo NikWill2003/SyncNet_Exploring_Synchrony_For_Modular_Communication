@@ -1,0 +1,28 @@
+defaults:
+  - config_schema
+  - task: sort_of_clevr
+  - experiment: ???
+  - _self_          
+
+train:
+  seed: 0
+  n_steps: 600
+  train_bs: 32
+  val_bs: 32
+  early_stop_patience: null
+  grad_accum: 1
+  compile_model: false
+  mixed_precision: 'no'
+
+logging:
+  train_log_interval: 50
+  eval_log_interval: 50
+
+wandb:
+  enabled: false
+  
+hydra:
+  run:
+    dir: outputs/debug/${dataset.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: false
