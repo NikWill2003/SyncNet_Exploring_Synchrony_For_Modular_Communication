@@ -1,0 +1,12 @@
+torch
+accelerate
+hydra-core
+omegaconf
+wandb
+numpy
+opencv-python-headless
+pillow
+pyyaml
+pandas
+plotly
+kaleido
