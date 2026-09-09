@@ -63,4 +63,4 @@ python -m scripts.main task=sqoop experiment=sqoop/screens/token_models
 ```
 
 ## Figures and tables
-`figures.ipynb` pulls the runs from wandb and generate the figures and the code
+`figures.ipynb` pulls the runs from wandb and generate the figures and the tables
